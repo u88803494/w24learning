@@ -1,0 +1,9 @@
+.about {
+  background: rgba(0, 255, 0 , 0.3);
+  min-height: calc(100vh - 74px);
+}
+
+.about > div {
+  font-size: 36px;
+  margin: 10px;
+}

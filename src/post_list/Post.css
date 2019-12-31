@@ -1,0 +1,36 @@
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-left: 10px;
+}
+
+.post-item {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 0, 0.1);
+  margin-right: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.post-item__id {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: red;
+}
+
+.post-item__title {
+  margin-top: 15px;
+  font-size: 30px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
