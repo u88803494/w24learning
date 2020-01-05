@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Nav from './nav';
+import NavContainer from './nav';
 import About from './about';
 import Home from './home';
 import PostList from './post_list';
@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App" >
-          <Nav />
+          <NavContainer />
           <div className="page">
             <Route exact path="/" component={Home} />
             <Route exact path="/post" component={PostList} />

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Nav.css';
 import { Link, Route } from "react-router-dom";
-import { subscribe } from '../globalState.js';
 
 class Item extends Component {
   render() {
@@ -37,21 +36,4 @@ class Nav extends Component {
   }
 }
 
-function connect(Comp) {
-  class Wrapper extends React.Component {
-    componentDidMount() {
-      subscribe(this.updateState);
-    }
-
-    updateState = (globalState) => { // test: 1, nav: 2
-      this.setState(globalState);
-    }
-
-    render() {
-      return <Comp {...this.state} /> // <Comp test={1} nav={2} />
-    }
-  }
-  return Wrapper;
-}
-
-export default connect(Nav);
+export default Nav;

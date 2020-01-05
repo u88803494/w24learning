@@ -1,23 +1,16 @@
 import React, { Component } from 'react';
 import './home.css';
-import { dispatch } from '../globalState';
+import { connect } from 'react-redux'
 import { updateNavText } from '../actions';
-
-const style = {
-  homepage: {
-    fontSize: '40px',
-    paddingTop: '10px',
-  }
-}
 
 class Home extends Component {
   render() {
     return (
       <div className="home">
-        <div style={style.homppage}>I am homepage</div>
+        <div className="homepage">I am homepage</div>
         <button onClick={
           () => {
-            dispatch(updateNavText(Math.random()))
+            this.props.updateNav(Math.random())
           }
         }>click me</button>
       </div>
@@ -25,4 +18,11 @@ class Home extends Component {
   }
 }
 
-export default Home;
+const mapDispatchToPtops = dispatch => {
+  return {
+    updateNav: text => dispatch(updateNavText(text)),
+  }
+}
+
+
+export default connect(null, mapDispatchToPtops)(Home);
