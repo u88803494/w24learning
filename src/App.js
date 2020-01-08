@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import NavContainer from './nav';
-import About from './about';
-import Home from './home';
-import PostList from './post_list';
-import Post from './post';
+import Nav from './containers/NavContainer';
+import About from './component/about/';
+import Home from './containers/HomeContainer';
+import PostList from './containers/PostsContainer';
+import Post from './component/post';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App" >
-          <NavContainer />
+          <Nav />
           <div className="page">
             <Route exact path="/" component={Home} />
             <Route exact path="/post" component={PostList} />

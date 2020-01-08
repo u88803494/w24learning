@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import './home.css';
-import { connect } from 'react-redux'
-import { updateNavText } from '../actions';
 
 class Home extends Component {
   render() {
@@ -18,11 +16,4 @@ class Home extends Component {
   }
 }
 
-const mapDispatchToPtops = dispatch => {
-  return {
-    updateNav: text => dispatch(updateNavText(text)),
-  }
-}
-
-
-export default connect(null, mapDispatchToPtops)(Home);
+export default Home;

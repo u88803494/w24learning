@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Nav from './Nav'
+import Nav from '../component/nav/';
 
 const NavContainer = (props) => {
-  console.log('navCon');
   return <Nav {...props} />
 }
 

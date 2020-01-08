@@ -1,8 +1,17 @@
-import { UPDATE_NAV_TEXT } from './actionTypes';
+import * as actionTypes from './actionTypes';
 
 export const updateNavText = (text) => {
 	return {
-		type: UPDATE_NAV_TEXT,
+		type: actionTypes.UPDATE_NAV_TEXT,
 		value: text,
 	};
 };
+
+export const getPosts = () => ({
+	type: actionTypes.GET_POSTS,
+});
+
+export const getPostsSuccess = (data) => ({
+	type: actionTypes.GET_POSTS_SUCCESS,
+	data,
+});

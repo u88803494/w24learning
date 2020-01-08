@@ -1,21 +1,34 @@
-import { UPDATE_NAV_TEXT, UPDATE_TEST } from './actionTypes';
+import * as actionTypes from './actionTypes';
 
 const state = {
   navText: '123',
+  isLoadingGetPosts: false,
+  posts: [],
 }
 
 // [].reduce()
 function reducer(globalState = state, action) {
   switch (action.type) {
-    case UPDATE_NAV_TEXT:
+    case actionTypes.UPDATE_NAV_TEXT:
       return {
         ...globalState,
         navText: action.value,
       };
-    case UPDATE_TEST:
+    case actionTypes.UPDATE_TEST:
       return {
         ...globalState,
         test: action.value,
+      };
+    case actionTypes.GET_POSTS:
+      return {
+        ...globalState,
+        isLoadingGetPosts: true,
+      };
+    case actionTypes.GET_POSTS_SUCCESS:
+      return {
+        ...globalState,
+        isLoadingGetPosts: false,
+        posts: action.data
       };
     default:
       return globalState;

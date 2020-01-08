@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { getPost } from '../../WebAPI'
 
-class Post extends Component {
+class Posts extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +12,7 @@ class Post extends Component {
 
   componentDidMount() {
     const { postId } = this.props.match.params;
-    axios.get('https://jsonplaceholder.typicode.com/posts/' + postId)
+    getPost(postId)
       .then(res => {
         this.setState({
           post: res.data,
@@ -25,7 +25,7 @@ class Post extends Component {
     return (
       <div>
         <h1>POST</h1>
-        <Link to="/post"><button> back</button> </Link>
+        <Link to="/post"><button> back </button> </Link>
         <div>
           <h1>{post.title ? post.title : 'Loading'}</h1>
           <p>{post.body}</p>
@@ -36,4 +36,4 @@ class Post extends Component {
   }
 }
 
-export default Post;
+export default Posts;

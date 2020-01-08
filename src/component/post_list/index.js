@@ -1,28 +1,13 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
-import axios from 'axios';
 import './Post.css';
 
 class PostList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      posts: [],
-    }
-  }
-
   componentDidMount() {
-    axios.get('https://jsonplaceholder.typicode.com/posts')
-      .then(res => {
-        this.setState({
-          posts: res.data,
-        })
-      })
+    this.props.getPostList();
   }
 
   render() {
-    const { posts } = this.state;
-    const { history } = this.props;
+    const { history, posts } = this.props;
     return (
       <div>
         <h1>POST</h1>
@@ -42,4 +27,4 @@ class PostList extends Component {
   }
 }
 
-export default withRouter(PostList);
+export default PostList;
