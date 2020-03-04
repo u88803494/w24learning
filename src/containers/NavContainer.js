@@ -12,4 +12,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(NavContainer);
+export default connect(mapStateToProps, null)(NavContainer);

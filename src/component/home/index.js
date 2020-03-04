@@ -8,7 +8,7 @@ class Home extends Component {
         <div className="homepage">I am homepage</div>
         <button onClick={
           () => {
-            this.props.updateNav(Math.random())
+            this.props.updateNav(Math.random()); // 來自 Connect
           }
         }>click me</button>
       </div>

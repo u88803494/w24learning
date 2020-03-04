@@ -7,7 +7,7 @@ const HomeContainer = (props) => {
   return <Home {...props} />
 }
 
-const mapDispatchToPtops = dispatch => {
+const mapDispatchToPtops = dispatch => { // connect 內部產生作用
   return {
     updateNav: text => dispatch(updateNavText(text)),
   }
