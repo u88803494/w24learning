@@ -8,6 +8,7 @@ const state = {
 
 // [].reduce()
 function reducer(globalState = state, action) {
+  console.log(action)
   switch (action.type) {
     case actionTypes.UPDATE_NAV_TEXT:
       return {
@@ -19,16 +20,27 @@ function reducer(globalState = state, action) {
         ...globalState,
         test: action.value,
       };
-    case actionTypes.GET_POSTS:
+    case 'GET_POSTS_PENDING':
       return {
         ...globalState,
         isLoadingGetPosts: true,
       };
-    case actionTypes.GET_POSTS_SUCCESS:
+    case 'GET_POSTS_FULFILLED':
       return {
         ...globalState,
         isLoadingGetPosts: false,
-        posts: action.data
+        posts: action.payload.data
+      };
+    case 'GET_POST_PENDING':
+      return {
+        ...globalState,
+        isLoadingGetPosts: true,
+      };
+    case 'GET_POST_FULFILLED':
+      return {
+        ...globalState,
+        isLoadingGetPosts: false,
+        posts: action.payload.data
       };
     default:
       return globalState;

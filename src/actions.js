@@ -1,4 +1,5 @@
 import * as actionTypes from './actionTypes';
+import * as WebAPI from './WebAPI';
 
 export const updateNavText = (text) => {
 	return {
@@ -7,11 +8,12 @@ export const updateNavText = (text) => {
 	};
 };
 
-export const getPosts = () => ({
-	type: actionTypes.GET_POSTS,
-});
+export const getPostList = () => ({
+	type: 'GET_POSTS',
+	payload: WebAPI.getPosts(),
+})
 
-export const getPostsSuccess = (data) => ({
-	type: actionTypes.GET_POSTS_SUCCESS,
-	data,
-});
+export const getPost = (id) => ({
+	type: 'GET_POST',
+	payload: WebAPI.getPost(id),
+})
