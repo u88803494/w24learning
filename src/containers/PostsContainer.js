@@ -17,9 +17,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getPostList: () => {
-      dispatch(actions.getPostList())
-    }
+    getPostList: () => dispatch(actions.getPostList())
   }
 }
 

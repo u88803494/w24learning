@@ -8,20 +8,12 @@ export const updateNavText = (text) => {
 	};
 };
 
-export const getPosts = () => ({
-	type: actionTypes.GET_POSTS,
-});
+export const getPostList = () => ({
+	type: 'GET_POSTS',
+	payload: WebAPI.getPosts(),
+})
 
-export const getPostsSuccess = (data) => ({
-	type: actionTypes.GET_POSTS_SUCCESS,
-	data,
-});
-
-export const getPostList = () => {
-	return function (dispatch) {
-		dispatch(getPosts())
-		WebAPI.getPosts().then(res => {
-			dispatch(getPostsSuccess(res.data))
-		})
-	}
-}
+export const getPost = (id) => ({
+	type: 'GET_POST',
+	payload: WebAPI.getPost(id),
+})
